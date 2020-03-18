@@ -47,6 +47,9 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -91,19 +94,67 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controladoras\Autetica.ashx.cs">
-      <DependentUpon>Autetica.ashx</DependentUpon>
+    <Compile Include="Controladoras\CtrlFMRGestionarCatalogos.ashx.cs">
+      <DependentUpon>CtrlFMRGestionarCatalogos.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controladoras\CtrlFMRRealizarPedido.ashx.cs">
+      <DependentUpon>CtrlFMRRealizarPedido.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controladoras\CtrlFMRRegistrarseEnElSistema.ashx.cs">
+      <DependentUpon>CtrlFMRRegistrarseEnElSistema.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controladoras\CtrlFMRVerComprasRealizadas.ashx.cs">
+      <DependentUpon>CtrlFMRVerComprasRealizadas.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controladoras\CtrlFRMAutenticarseEnElSistema.ashx.cs">
+      <DependentUpon>CtrlFRMAutenticarseEnElSistema.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controladoras\CtrlFRMComprarPastel.ashx.cs">
+      <DependentUpon>CtrlFRMComprarPastel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controladoras\CtrlFRMComprobantePago.ashx.cs">
+      <DependentUpon>CtrlFRMComprobantePago.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controladoras\CtrlFRMConsultarCatalogos.ashx.cs">
+      <DependentUpon>CtrlFRMConsultarCatalogos.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controladoras\CtrlFRMGestionarCliente.ashx.cs">
+      <DependentUpon>CtrlFRMGestionarCliente.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controladoras\CtrlFRMGestionarPasteles.ashx.cs">
+      <DependentUpon>CtrlFRMGestionarPasteles.ashx</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Administrador.cs" />
+    <Compile Include="Entidades\Catalogo.cs" />
     <Compile Include="Entidades\Clientes.cs" />
-    <Compile Include="Entidades\Pago.cs" />
+    <Compile Include="Entidades\Compra.cs" />
+    <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\Pastel.cs" />
+    <Compile Include="Entidades\Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controladoras\Autetica.ashx" />
+    <Content Include="Controladoras\CtrlFRMAutenticarseEnElSistema.ashx" />
+    <Content Include="Controladoras\CtrlFRMConsultarCatalogos.ashx" />
+    <Content Include="Controladoras\CtrlFMRGestionarCatalogos.ashx" />
+    <Content Include="Controladoras\CtrlFMRVerComprasRealizadas.ashx" />
+    <Content Include="Controladoras\CtrlFRMComprobantePago.ashx" />
+    <Content Include="Controladoras\CtrlFMRRegistrarseEnElSistema.ashx" />
+    <Content Include="Controladoras\CtrlFMRRealizarPedido.ashx" />
+    <Content Include="Controladoras\CtrlFRMGestionarPasteles.ashx" />
+    <Content Include="Controladoras\CtrlFRMComprarPastel.ashx" />
+    <Content Include="Controladoras\CtrlFRMGestionarCliente.ashx" />
     <None Include="packages.config" />
-    <Content Include="Vistas\Autetica.cshtml" />
+    <Content Include="Vistas\FRMAutenticarseEnElSistema.cshtml" />
+    <Content Include="Vistas\FRMRegistrarseEnElSistema.cshtml" />
+    <Content Include="Vistas\FRMConsultarCatalogos.cshtml" />
+    <Content Include="Vistas\FMRGestionarCatalogos.cshtml" />
+    <Content Include="Vistas\FRMRealizarPedido.cshtml" />
+    <Content Include="Vistas\FMRGestionarPasteles.cshtml" />
+    <Content Include="Vistas\FRMCompraPastel.cshtml" />
+    <Content Include="Vistas\FRMVerComprasRealizadas.cshtml" />
+    <Content Include="Vistas\FRMComprobantePago.cshtml" />
+    <Content Include="Vistas\FRMGestionarCliente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

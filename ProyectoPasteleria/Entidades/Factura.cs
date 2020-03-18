@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProyectoPasteleria.Entidades
 {
-    public class Pago
+    public class Factura
     {
     }
 }
