@@ -14,7 +14,7 @@ namespace ProyectoPasteleria.Repositorios.Repositorio
     public class PastelRepositorio : BaseRepository<Pastel, SqlConnection>,IPastelRepositorio
     {
  
-        public DbSet<Pastel> Categories { get; set; }
+        public DbSet<Pastel> Pastel{ get; set; }
 
 
         public PastelRepositorio()
