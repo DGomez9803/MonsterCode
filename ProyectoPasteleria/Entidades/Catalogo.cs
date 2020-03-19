@@ -8,23 +8,16 @@ namespace ProyectoPasteleria.Entidades
 {
     public class Catalogo
     {
-        private int Id;
-        private String Nombre;
-        private Pastel[] Pasteles;
+        private int Id { get => Id; set => Id = value; }
+        private String Nombre { get => Nombre; set => Nombre = value; }
+        private Pastel[] Pasteles { get => Pasteles; set => Pasteles = value; }
 
         public Catalogo( int  id,string nombre)
         {
             Id = id;
             Nombre = nombre;
         }
-        public String GetNombre()
-        {
-            return Nombre;
-        }
-         public Pastel[] GetPasteles()
-        {
-            return Pasteles;
-        }
+   
 
         //Genera un json con toda la informacion de Catalogo con sus pasteles
         public JObject GetCatalogo()

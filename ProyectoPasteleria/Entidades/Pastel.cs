@@ -9,17 +9,16 @@ namespace ProyectoPasteleria.Entidades
 {
     public class Pastel
     {
-        private int Id;
-        private String Nombre;
-        private Double Peso;
-        private String Categoria;
-        private Double Precio;
-        private String Descripcion;
-        private Image Imagen;
-
+        private int Id { get => Id; set => Id = value; }
+        private String Nombre { get => Nombre; set => Nombre = value; }
+        public double Peso { get => Peso; set => Peso = value; } 
+        private String Categoria { get => Categoria; set => Categoria = value; }
+        public double Precio { get => Precio; set => Precio = value; }
+        private String Descripcion { get => Descripcion; set => Descripcion = value; }
+        private Image Imagen { get => Imagen; set => Imagen = value; }
+        private int IdCatalogo { get => IdCatalogo; set => IdCatalogo = value; }
         //constructor de la clase paatel
-
-        public Pastel(int id, string nombre, double peso, string categoria, double precio, string descripcion, Image imagen)
+        public Pastel(int id, string nombre, double peso, string categoria, double precio, string descripcion, int idCatalogo)
         {
             Id = id;
             Nombre = nombre;
@@ -27,21 +26,15 @@ namespace ProyectoPasteleria.Entidades
             Categoria = categoria;
             Precio = precio;
             Descripcion = descripcion;
-            Imagen = imagen;
+         
+            IdCatalogo = idCatalogo;
         }
-        public int GetId()
-        {
-            return Id;
-        }
-        public Double GetPrecio()
-        {
-            return Precio;
-        }
-        public String GetNombre()
-        {
-            return Nombre;
 
-        }
+      
+
+
+       
+        
         //Genera un json con toda la informacion de pastel
         public JObject GetDatos()
         {
@@ -54,38 +47,16 @@ namespace ProyectoPasteleria.Entidades
                          new JProperty("Categoria", Categoria),
                          new JProperty("Precio", Precio),
                          new JProperty("Descripcion", Descripcion),
-                         new JProperty("Imagen", Imagen));
-           
+                         new JProperty("Imagen", Imagen),
+                         new JProperty("IdCatalogo", IdCatalogo));
+
             return Datos;
         }
-        public void SetNombre(String nombre)
-        {
-            Nombre = nombre;
+     
+        public void SetDescripcion(String descripcion) => Descripcion = descripcion;
+        public Pastel GetPatel() => this;
 
-        }
-        public void SetPeso( double peso)
-        {
-         
-            Peso = peso;
-        }
-        public void SetPrecio(double precio)
-        {
-
-            Precio = precio;
-        }
-        public void SetDescripcion(String  descripcion)
-        {
-
-            Descripcion = descripcion;
-        }
-        public Pastel GetPatel()
-        {
-            return this;
-        }
         //para elimina el pastel
-        public Boolean  DestroyPastel(Pastel pastel)
-        {
-            return true;
-                }
+        public Boolean DestroyPastel(Pastel pastel) => true;
     }
 }

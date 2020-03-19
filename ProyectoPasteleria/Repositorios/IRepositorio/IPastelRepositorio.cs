@@ -8,7 +8,7 @@ using ProyectoPasteleria.Entidades;
 
 namespace ProyectoPasteleria.Repositorios.IRepositorio
 {
-    interface IPastelRepositorio : IDisposable
+    interface IPastelRepositorio 
     {
         Pastel GetById(int PastelId);
         void Insert(Pastel Pastel);

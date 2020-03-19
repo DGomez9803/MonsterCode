@@ -111,9 +111,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MonsterCode.mdf" />
-    <Content Include="App_Data\MonsterCode_log.ldf">
-      <DependentUpon>MonsterCode.mdf</DependentUpon>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
@@ -166,8 +166,9 @@
     <Compile Include="Modelos\RegistrarseEnElSistema.cs" />
     <Compile Include="Modelos\Faltar\VerComprasRealizadas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorios\GenericRepository.cs" />
+    <Compile Include="Repositorios\IRepositorio\ICatalogoRepositorio.cs" />
     <Compile Include="Repositorios\IRepositorio\IPastelRepositorio.cs" />
+    <Compile Include="Repositorios\Repositorio\CatalogoRepositorio.cs" />
     <Compile Include="Repositorios\Repositorio\PastelRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>

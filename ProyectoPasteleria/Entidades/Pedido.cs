@@ -39,7 +39,7 @@ namespace ProyectoPasteleria.Entidades
             double total = 0;
             foreach (KeyValuePair<Pastel, int> pastel in Pasteles)
             {
-                total += (pastel.Value)* pastel.Key.GetPrecio();
+                total += (pastel.Value)* pastel.Key.Precio;
             }
             return total;
         }
