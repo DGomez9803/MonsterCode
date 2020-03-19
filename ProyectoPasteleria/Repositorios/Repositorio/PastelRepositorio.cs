@@ -22,7 +22,7 @@ namespace ProyectoPasteleria.Repositorios.Repositorio
         { }
     
 
-    public Pastel GetById(long id)
+    public Pastel GetById(int id)
     {
         return Query(id).FirstOrDefault();
     }
@@ -30,20 +30,20 @@ namespace ProyectoPasteleria.Repositorios.Repositorio
         
        
       
-        public long Insert(Pastel Pastel)
+        public void Insert(Pastel Pastel)
         {
-            return Insert<long>(Pastel);
+             Insert<int>(Pastel);
         }
         
-        public int Delete(long id)
+        public void Delete(int id)
         {
-            return Delete(id);
+             Delete(id);
         }
      
 
-        public int Update(Pastel Pastel)
+        public void  Update(Pastel Pastel)
         {
-            return Update(Pastel);
+             Update(Pastel);
         }
        
     }

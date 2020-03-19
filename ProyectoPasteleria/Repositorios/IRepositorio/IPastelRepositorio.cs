@@ -10,9 +10,8 @@ namespace ProyectoPasteleria.Repositorios.IRepositorio
 {
     interface IPastelRepositorio : IDisposable
     {
-        IEnumerable<Pastel> GetStudents();
-        Pastel GePatelByID(int PastelId);
-        void Inser(Pastel Pastel);
+        Pastel GetById(int PastelId);
+        void Insert(Pastel Pastel);
         void Delete(int PastelId);
         void Update(Pastel Pastel);
     }
