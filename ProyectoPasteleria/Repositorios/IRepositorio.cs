@@ -7,7 +7,7 @@ using ProyectoPasteleria;
 
 namespace ProyectoPasteleria.Repositorios
 {
-    interface IRepositorio <T>
+    public interface IRepositorio <T>
     {
   
         void Agregar(T entidad);

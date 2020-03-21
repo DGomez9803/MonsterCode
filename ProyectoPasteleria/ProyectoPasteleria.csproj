@@ -280,7 +280,6 @@
     <Compile Include="MediosPago.cs">
       <DependentUpon>BaseDeDatos.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Forum.cs" />
     <Compile Include="Pastel.cs">
       <DependentUpon>BaseDeDatos.tt</DependentUpon>
     </Compile>
