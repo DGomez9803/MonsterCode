@@ -70,6 +70,8 @@
     <Reference Include="System.Reflection.TypeExtensions, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reflection.TypeExtensions.4.4.0\lib\net461\System.Reflection.TypeExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -111,13 +113,43 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <Content Include="BaseDeDatos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseDeDatos.Context.cs</LastGenOutput>
+      <DependentUpon>BaseDeDatos.edmx</DependentUpon>
+    </Content>
+    <Content Include="BaseDeDatos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseDeDatos.cs</LastGenOutput>
+      <DependentUpon>BaseDeDatos.edmx</DependentUpon>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs">
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDeDatos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDeDatos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDeDatos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDeDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDeDatos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo.cs">
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controladoras\CtrlFMRGestionarCatalogos.ashx.cs">
       <DependentUpon>CtrlFMRGestionarCatalogos.ashx</DependentUpon>
     </Compile>
@@ -151,10 +183,19 @@
     <Compile Include="Entidades\Administrador.cs" />
     <Compile Include="Entidades\Catalogo.cs" />
     <Compile Include="Entidades\Clientes.cs" />
-    <Compile Include="Entidades\Compra.cs" />
     <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\Pastel.cs" />
     <Compile Include="Entidades\Pedido.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Factura.cs">
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MediosEnvio.cs">
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MediosPago.cs">
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\AutentificarseEnElSistema.cs" />
     <Compile Include="Modelos\Faltar\ComprarPastel.cs" />
     <Compile Include="Modelos\Faltar\ComprobantePago.cs" />
@@ -165,11 +206,20 @@
     <Compile Include="Modelos\Faltar\RealizarPedido.cs" />
     <Compile Include="Modelos\RegistrarseEnElSistema.cs" />
     <Compile Include="Modelos\Faltar\VerComprasRealizadas.cs" />
+    <Compile Include="Pastel.cs">
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\IRepositorio\ICatalogoRepositorio.cs" />
     <Compile Include="Repositorios\IRepositorio\IPastelRepositorio.cs" />
     <Compile Include="Repositorios\Repositorio\CatalogoRepositorio.cs" />
     <Compile Include="Repositorios\Repositorio\PastelRepositorio.cs" />
+    <Compile Include="Usuario.cs">
+      <DependentUpon>BaseDeDatos.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controladoras\CtrlFRMAutenticarseEnElSistema.ashx" />
@@ -182,6 +232,13 @@
     <Content Include="Controladoras\CtrlFRMGestionarPasteles.ashx" />
     <Content Include="Controladoras\CtrlFRMComprarPastel.ashx" />
     <Content Include="Controladoras\CtrlFRMGestionarCliente.ashx" />
+    <EntityDeploy Include="BaseDeDatos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BaseDeDatos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="BaseDeDatos.edmx.diagram">
+      <DependentUpon>BaseDeDatos.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Vistas\FRMAutenticarseEnElSistema.cshtml" />
     <Content Include="Vistas\FRMRegistrarseEnElSistema.cshtml" />
@@ -200,7 +257,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
