@@ -1,28 +1,17 @@
-﻿using System;
+﻿using ProyectoPasteleria.Repositorios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ProyectoPasteleria.Controladoras
 {
     /// <summary>
     /// Descripción breve de Autetica
     /// </summary>
-    public class Autetica : IHttpHandler
+    public class Autetica : Controller
     {
 
-        public void ProcessRequest(HttpContext context)
-        {
-            context.Response.ContentType = "text/plain";
-            context.Response.Write("Hola a todos");
-        }
-
-        public bool IsReusable
-        {
-            get
-            {
-                return false;
-            }
-        }
     }
 }

@@ -2,27 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
+
+using ProyectoPasteleria.Repositorios;
+
 
 namespace ProyectoPasteleria.Controladoras
 {
     /// <summary>
     /// Descripción breve de CtrlFRMConsultarCatalogos
     /// </summary>
-    public class CtrlFRMConsultarCatalogos : IHttpHandler
+    public class CtrlFRMConsultarCatalogos : Controller
     {
 
-        public void ProcessRequest(HttpContext context)
-        {
-            context.Response.ContentType = "text/plain";
-            context.Response.Write("Hola a todos");
-        }
-
-        public bool IsReusable
-        {
-            get
-            {
-                return false;
-            }
-        }
+        
     }
 }
