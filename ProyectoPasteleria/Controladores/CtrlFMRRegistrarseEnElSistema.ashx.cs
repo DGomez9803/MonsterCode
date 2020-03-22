@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using ProyectoPasteleria.Repositorios;
 using System.Web.Mvc;
-using ProyectoPasteleria.Repositorios;
-using ProyectoPasteleria.Modelos;
 
 namespace ProyectoPasteleria.Controladoras
 {

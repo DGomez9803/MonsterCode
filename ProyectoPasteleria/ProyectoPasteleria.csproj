@@ -230,7 +230,6 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>BaseDeDatos.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\DbContextLocal.cs" />
     <Compile Include="Controladores\CtrlFMRGestionarCatalogos.ashx.cs">
       <DependentUpon>CtrlFMRGestionarCatalogos.ashx</DependentUpon>
     </Compile>

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ProyectoPasteleria.Modelos
 {
-    public class MediosPago:Entidad
+    public class MediosPago : Entidad
     {
         public String Nombre { get => Nombre; set => Nombre = value; }
 

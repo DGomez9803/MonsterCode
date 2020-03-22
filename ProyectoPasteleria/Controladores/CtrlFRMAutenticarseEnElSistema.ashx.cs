@@ -1,8 +1,4 @@
 ﻿using ProyectoPasteleria.Repositorios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ProyectoPasteleria.Controladoras
@@ -14,7 +10,7 @@ namespace ProyectoPasteleria.Controladoras
     {
 
         private IRepositorio<Usuario> _repositorio;
-        public CtrlFRMAutenticarseEnElSistema (IRepositorio<Usuario> repositorio)
+        public CtrlFRMAutenticarseEnElSistema(IRepositorio<Usuario> repositorio)
         {
             _repositorio = repositorio;
         }
