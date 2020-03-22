@@ -17,8 +17,8 @@ namespace ProyectoPasteleria
         public int ID_USUARIO { get; set; }
         public string NOMBRE_USUARIO { get; set; }
         public string APELLIDO_USUARIO { get; set; }
-        public string CORREO_ELECTONICO_USUARIO { get; set; }
         public string CONTRASEÑA_USUARIO { get; set; }
+        public string CORREO_ELECTRONICO_USUARIO { get; set; }
     
         public virtual Administrador Administrador { get; set; }
         public virtual Cliente Cliente { get; set; }

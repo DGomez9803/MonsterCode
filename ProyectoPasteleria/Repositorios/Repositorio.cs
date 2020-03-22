@@ -9,10 +9,10 @@ using DocumentFormat.OpenXml.Office2010.Excel;
 using Fluent.Infrastructure.FluentModel;
 using Nest;
 using ProyectoPasteleria.Modelos;
-using ProyectoPasteleria.Repositorios;
+
 using RepoDb;
 
-namespace ProyectoPasteleria.Repositorios.Repositorio
+namespace ProyectoPasteleria.Repositorios
 {
     public class Repositorio<T> : IRepositorio<T> where T : Entidad, new()
     {

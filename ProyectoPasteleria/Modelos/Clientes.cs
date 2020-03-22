@@ -25,13 +25,13 @@ namespace ProyectoPasteleria.Modelos
             JObject Datos = new JObject();
 
             Datos = new JObject(
-                       // new JProperty("Id", Id),
-                     //   new JProperty("Nombre", Nombre),
-                       // new JProperty("Apellido", Apellido),
+                        // new JProperty("Id", Id),
+                        //   new JProperty("Nombre", Nombre),
+                        // new JProperty("Apellido", Apellido),
                         new JProperty("Direccion", Direccion),
                        new JProperty("Ciudad", Ciudad),
                         new JProperty("Departamento", Departamento),
-                        new JProperty("Telefono", Telefono)
+                        new JProperty("Telefono", Telefono));
                       //  new JProperty("Correo_Electronico", Correo_Electronico),
                       //  new JProperty("Contraseña", Contraseña),
                      //   new JProperty("MediosEnvio", MediosEnvio),

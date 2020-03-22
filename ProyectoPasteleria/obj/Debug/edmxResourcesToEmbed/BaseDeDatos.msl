@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="BaseDeDatos" />
+  <Alias Key="Target" Value="BaseDeDatos.Store" />
+  <EntityContainerMapping CdmEntityContainer="BaseDeDatosContainer" StorageEntityContainer="BaseDeDatosStoreContainer">
+    <EntitySetMapping Name="Administrador">
+      <EntityTypeMapping TypeName="BaseDeDatos.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="AREA_ADMINISTRADOR" ColumnName="AREA_ADMINISTRADOR" />
+          <ScalarProperty Name="ID_ADMINISTRADOR" ColumnName="ID_ADMINISTRADOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Catalogo">
+      <EntityTypeMapping TypeName="BaseDeDatos.Catalogo">
+        <MappingFragment StoreEntitySet="Catalogo">
+          <ScalarProperty Name="NOMBRE_CATALOGO" ColumnName="NOMBRE_CATALOGO" />
+          <ScalarProperty Name="ID_CATALOGO" ColumnName="ID_CATALOGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="BaseDeDatos.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="TELEFONO_CLIENTE" ColumnName="TELEFONO_CLIENTE" />
+          <ScalarProperty Name="DEPARTAMENTO_CLIENTE" ColumnName="DEPARTAMENTO_CLIENTE" />
+          <ScalarProperty Name="CIUDAD_CLIENTE" ColumnName="CIUDAD_CLIENTE" />
+          <ScalarProperty Name="DIRECCION_CLIENTE" ColumnName="DIRECCION_CLIENTE" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factura">
+      <EntityTypeMapping TypeName="BaseDeDatos.Factura">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="URL_FACTURA" ColumnName="URL_FACTURA" />
+          <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MediosEnvio">
+      <EntityTypeMapping TypeName="BaseDeDatos.MediosEnvio">
+        <MappingFragment StoreEntitySet="MediosEnvio">
+          <ScalarProperty Name="DESCRIPCION_MEDIOSENVIOS" ColumnName="DESCRIPCION_MEDIOSENVIOS" />
+          <ScalarProperty Name="NOMBRE_MEDIOSENVIOS" ColumnName="NOMBRE_MEDIOSENVIOS" />
+          <ScalarProperty Name="ID_MEDIOSENVIOS" ColumnName="ID_MEDIOSENVIOS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MediosPago">
+      <EntityTypeMapping TypeName="BaseDeDatos.MediosPago">
+        <MappingFragment StoreEntitySet="MediosPago">
+          <ScalarProperty Name="DESCRIPCION_MEDIOSPAGO" ColumnName="DESCRIPCION_MEDIOSPAGO" />
+          <ScalarProperty Name="NOMBRE_MEDIOSPAGO" ColumnName="NOMBRE_MEDIOSPAGO" />
+          <ScalarProperty Name="ID_MEDIOSPAGO" ColumnName="ID_MEDIOSPAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pastel">
+      <EntityTypeMapping TypeName="BaseDeDatos.Pastel">
+        <MappingFragment StoreEntitySet="Pastel">
+          <ScalarProperty Name="ID_CATALOGO" ColumnName="ID_CATALOGO" />
+          <ScalarProperty Name="IMAGEN_PASTEL" ColumnName="IMAGEN_PASTEL" />
+          <ScalarProperty Name="DESCRIPCION_PASTEL" ColumnName="DESCRIPCION_PASTEL" />
+          <ScalarProperty Name="PRECIO_PASTEL" ColumnName="PRECIO_PASTEL" />
+          <ScalarProperty Name="IDCATEGORIA_PASTEL" ColumnName="IDCATEGORIA_PASTEL" />
+          <ScalarProperty Name="PESO_PASTEL" ColumnName="PESO_PASTEL" />
+          <ScalarProperty Name="NOMBRE_PASTEL" ColumnName="NOMBRE_PASTEL" />
+          <ScalarProperty Name="ID_PASTEL" ColumnName="ID_PASTEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="BaseDeDatos.Pedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="ID_PASTEL" ColumnName="ID_PASTEL" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="BaseDeDatos.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="CORREO_ELECTRONICO_USUARIO" ColumnName="CORREO_ELECTRONICO_USUARIO" />
+          <ScalarProperty Name="CONTRASEÑA_USUARIO" ColumnName="CONTRASEÑA_USUARIO" />
+          <ScalarProperty Name="APELLIDO_USUARIO" ColumnName="APELLIDO_USUARIO" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MediosEnvio_Cliente" TypeName="BaseDeDatos.MediosEnvio_Cliente" StoreEntitySet="MediosEnvio_Cliente">
+      <EndProperty Name="MediosEnvio">
+        <ScalarProperty Name="ID_MEDIOSENVIOS" ColumnName="ID_MEDIOSENVIOS" />
+      </EndProperty>
+      <EndProperty Name="Cliente">
+        <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MediosPago_Cliente" TypeName="BaseDeDatos.MediosPago_Cliente" StoreEntitySet="MediosPago_Cliente">
+      <EndProperty Name="MediosPago">
+        <ScalarProperty Name="ID_MEDIOSPAGO" ColumnName="ID_MEDIOSPAGO" />
+      </EndProperty>
+      <EndProperty Name="Cliente">
+        <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

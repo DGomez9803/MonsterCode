@@ -7,14 +7,13 @@
 ////-----------------------------------------------------------------------
 
 using Fluent.Infrastructure.FluentTools;
-using ProyectoPasteleria.DataBase;
+
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ProyectoPasteleria.App_Start), "PreStart")]
 
 namespace ProyectoPasteleria {
     public static class App_Start {
         public static void PreStart() {
-            FluentStartup.Initialize(typeof(DbContextLocal));
         }
     }
 }

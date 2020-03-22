@@ -103,7 +103,7 @@ advertencia 6002: La tabla o vista 'C:\USERS\BERNA\SOURCE\REPOS\MONSTERCODE\PROY
           <Property Name="ID_USUARIO" Type="int" Nullable="false" />
           <Property Name="NOMBRE_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="APELLIDO_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CORREO_ELECTONICO_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CORREO_ELECTRONICO_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CONTRASEÑA_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK__Administr__ID_AD__4F7CD00D">
@@ -428,10 +428,10 @@ FROM [dbo].[MediosPago_Cliente] AS [MediosPago_Cliente]</DefiningQuery>
           <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
           <Property Name="NOMBRE_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="APELLIDO_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CORREO_ELECTONICO_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CONTRASEÑA_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Administrador" Relationship="BaseDeDatos.FK__Administr__ID_AD__4F7CD00D" FromRole="Usuario" ToRole="Administrador" />
           <NavigationProperty Name="Cliente" Relationship="BaseDeDatos.FK__Cliente__ID_CLIE__4CA06362" FromRole="Usuario" ToRole="Cliente" />
+          <Property Name="CORREO_ELECTRONICO_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__Administr__ID_AD__4F7CD00D">
           <End Type="BaseDeDatos.Usuario" Role="Usuario" Multiplicity="1" />
@@ -603,8 +603,8 @@ FROM [dbo].[MediosPago_Cliente] AS [MediosPago_Cliente]</DefiningQuery>
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="BaseDeDatos.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="CORREO_ELECTRONICO_USUARIO" ColumnName="CORREO_ELECTRONICO_USUARIO" />
                 <ScalarProperty Name="CONTRASEÑA_USUARIO" ColumnName="CONTRASEÑA_USUARIO" />
-                <ScalarProperty Name="CORREO_ELECTONICO_USUARIO" ColumnName="CORREO_ELECTONICO_USUARIO" />
                 <ScalarProperty Name="APELLIDO_USUARIO" ColumnName="APELLIDO_USUARIO" />
                 <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />

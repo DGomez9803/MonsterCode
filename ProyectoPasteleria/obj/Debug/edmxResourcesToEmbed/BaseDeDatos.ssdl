@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaseDeDatos.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="ID_ADMINISTRADOR" />
+    </Key>
+    <Property Name="ID_ADMINISTRADOR" Type="int" Nullable="false" />
+    <Property Name="AREA_ADMINISTRADOR" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Catalogo">
+    <Key>
+      <PropertyRef Name="ID_CATALOGO" />
+    </Key>
+    <Property Name="ID_CATALOGO" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_CATALOGO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="DIRECCION_CLIENTE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CIUDAD_CLIENTE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DEPARTAMENTO_CLIENTE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TELEFONO_CLIENTE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="int" Nullable="false" />
+    <Property Name="ID_PEDIDO" Type="int" Nullable="false" />
+    <Property Name="URL_FACTURA" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MediosEnvio">
+    <Key>
+      <PropertyRef Name="ID_MEDIOSENVIOS" />
+    </Key>
+    <Property Name="ID_MEDIOSENVIOS" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_MEDIOSENVIOS" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCRIPCION_MEDIOSENVIOS" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'C:\USERS\BERNA\SOURCE\REPOS\MONSTERCODE\PROYECTOPASTELERIA\BASEDEDATOS.MDF.dbo.MediosEnvio_Cliente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MediosEnvio_Cliente">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+      <PropertyRef Name="ID_MEDIOSENVIOS" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="ID_MEDIOSENVIOS" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MediosPago">
+    <Key>
+      <PropertyRef Name="ID_MEDIOSPAGO" />
+    </Key>
+    <Property Name="ID_MEDIOSPAGO" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_MEDIOSPAGO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCRIPCION_MEDIOSPAGO" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'C:\USERS\BERNA\SOURCE\REPOS\MONSTERCODE\PROYECTOPASTELERIA\BASEDEDATOS.MDF.dbo.MediosPago_Cliente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MediosPago_Cliente">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+      <PropertyRef Name="ID_MEDIOSPAGO" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="ID_MEDIOSPAGO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pastel">
+    <Key>
+      <PropertyRef Name="ID_PASTEL" />
+    </Key>
+    <Property Name="ID_PASTEL" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_PASTEL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PESO_PASTEL" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IDCATEGORIA_PASTEL" Type="int" Nullable="false" />
+    <Property Name="PRECIO_PASTEL" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DESCRIPCION_PASTEL" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="IMAGEN_PASTEL" Type="image" />
+    <Property Name="ID_CATALOGO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="ID_PEDIDO" />
+    </Key>
+    <Property Name="ID_PEDIDO" Type="int" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="ID_PASTEL" Type="int" Nullable="false" />
+    <Property Name="CANTIDAD" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TOTAL" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="APELLIDO_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CORREO_ELECTRONICO_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CONTRASEÑA_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Administr__ID_AD__4F7CD00D">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="Administrador">
+        <PropertyRef Name="ID_ADMINISTRADOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cliente__ID_CLIE__4CA06362">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Factura__ID_PEDI__5629CD9C">
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="ID_PEDIDO" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="ID_PEDIDO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MediosEnv__ID_CL__5AEE82B9">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="MediosEnvio_Cliente" Type="Self.MediosEnvio_Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="MediosEnvio_Cliente">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MediosEnv__ID_ME__5BE2A6F2">
+    <End Role="MediosEnvio" Type="Self.MediosEnvio" Multiplicity="1" />
+    <End Role="MediosEnvio_Cliente" Type="Self.MediosEnvio_Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MediosEnvio">
+        <PropertyRef Name="ID_MEDIOSENVIOS" />
+      </Principal>
+      <Dependent Role="MediosEnvio_Cliente">
+        <PropertyRef Name="ID_MEDIOSENVIOS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MediosPag__ID_CL__5812160E">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="MediosPago_Cliente" Type="Self.MediosPago_Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="MediosPago_Cliente">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MediosPag__ID_ME__59063A47">
+    <End Role="MediosPago" Type="Self.MediosPago" Multiplicity="1" />
+    <End Role="MediosPago_Cliente" Type="Self.MediosPago_Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MediosPago">
+        <PropertyRef Name="ID_MEDIOSPAGO" />
+      </Principal>
+      <Dependent Role="MediosPago_Cliente">
+        <PropertyRef Name="ID_MEDIOSPAGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pastel__ID_CATAL__3E52440B">
+    <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="1" />
+    <End Role="Pastel" Type="Self.Pastel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Catalogo">
+        <PropertyRef Name="ID_CATALOGO" />
+      </Principal>
+      <Dependent Role="Pastel">
+        <PropertyRef Name="ID_CATALOGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__ID_CLIEN__534D60F1">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__ID_PASTE__52593CB8">
+    <End Role="Pastel" Type="Self.Pastel" Multiplicity="1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pastel">
+        <PropertyRef Name="ID_PASTEL" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="ID_PASTEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BaseDeDatosStoreContainer">
+    <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo" EntityType="Self.Catalogo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MediosEnvio" EntityType="Self.MediosEnvio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MediosPago" EntityType="Self.MediosPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pastel" EntityType="Self.Pastel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MediosEnvio_Cliente" EntityType="Self.MediosEnvio_Cliente" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MediosEnvio_Cliente].[ID_CLIENTE] AS [ID_CLIENTE], 
+[MediosEnvio_Cliente].[ID_MEDIOSENVIOS] AS [ID_MEDIOSENVIOS]
+FROM [dbo].[MediosEnvio_Cliente] AS [MediosEnvio_Cliente]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MediosPago_Cliente" EntityType="Self.MediosPago_Cliente" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MediosPago_Cliente].[ID_CLIENTE] AS [ID_CLIENTE], 
+[MediosPago_Cliente].[ID_MEDIOSPAGO] AS [ID_MEDIOSPAGO]
+FROM [dbo].[MediosPago_Cliente] AS [MediosPago_Cliente]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Administr__ID_AD__4F7CD00D" Association="Self.FK__Administr__ID_AD__4F7CD00D">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Administrador" EntitySet="Administrador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cliente__ID_CLIE__4CA06362" Association="Self.FK__Cliente__ID_CLIE__4CA06362">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Factura__ID_PEDI__5629CD9C" Association="Self.FK__Factura__ID_PEDI__5629CD9C">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MediosEnv__ID_CL__5AEE82B9" Association="Self.FK__MediosEnv__ID_CL__5AEE82B9">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="MediosEnvio_Cliente" EntitySet="MediosEnvio_Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MediosEnv__ID_ME__5BE2A6F2" Association="Self.FK__MediosEnv__ID_ME__5BE2A6F2">
+      <End Role="MediosEnvio" EntitySet="MediosEnvio" />
+      <End Role="MediosEnvio_Cliente" EntitySet="MediosEnvio_Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MediosPag__ID_CL__5812160E" Association="Self.FK__MediosPag__ID_CL__5812160E">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="MediosPago_Cliente" EntitySet="MediosPago_Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MediosPag__ID_ME__59063A47" Association="Self.FK__MediosPag__ID_ME__59063A47">
+      <End Role="MediosPago" EntitySet="MediosPago" />
+      <End Role="MediosPago_Cliente" EntitySet="MediosPago_Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pastel__ID_CATAL__3E52440B" Association="Self.FK__Pastel__ID_CATAL__3E52440B">
+      <End Role="Catalogo" EntitySet="Catalogo" />
+      <End Role="Pastel" EntitySet="Pastel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__ID_CLIEN__534D60F1" Association="Self.FK__Pedido__ID_CLIEN__534D60F1">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__ID_PASTE__52593CB8" Association="Self.FK__Pedido__ID_PASTE__52593CB8">
+      <End Role="Pastel" EntitySet="Pastel" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
