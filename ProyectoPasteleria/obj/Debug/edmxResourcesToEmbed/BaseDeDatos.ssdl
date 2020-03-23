@@ -98,7 +98,7 @@ advertencia 6002: La tabla o vista 'C:\USERS\BERNA\SOURCE\REPOS\MONSTERCODE\PROY
     <Property Name="ID_USUARIO" Type="int" Nullable="false" />
     <Property Name="NOMBRE_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="APELLIDO_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="CORREO_ELECTRONICO_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CORREO_ELECTONICO_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="CONTRASEÑA_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK__Administr__ID_AD__4F7CD00D">

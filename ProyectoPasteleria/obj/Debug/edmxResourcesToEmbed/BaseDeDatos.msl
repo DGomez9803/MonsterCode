@@ -85,8 +85,8 @@
     <EntitySetMapping Name="Usuario">
       <EntityTypeMapping TypeName="BaseDeDatos.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
-          <ScalarProperty Name="CORREO_ELECTRONICO_USUARIO" ColumnName="CORREO_ELECTRONICO_USUARIO" />
           <ScalarProperty Name="CONTRASEÑA_USUARIO" ColumnName="CONTRASEÑA_USUARIO" />
+          <ScalarProperty Name="CORREO_ELECTONICO_USUARIO" ColumnName="CORREO_ELECTONICO_USUARIO" />
           <ScalarProperty Name="APELLIDO_USUARIO" ColumnName="APELLIDO_USUARIO" />
           <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />

@@ -135,10 +135,10 @@
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
     <Property Name="NOMBRE_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="APELLIDO_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CORREO_ELECTONICO_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CONTRASEÑA_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Administrador" Relationship="BaseDeDatos.FK__Administr__ID_AD__4F7CD00D" FromRole="Usuario" ToRole="Administrador" />
     <NavigationProperty Name="Cliente" Relationship="BaseDeDatos.FK__Cliente__ID_CLIE__4CA06362" FromRole="Usuario" ToRole="Cliente" />
-    <Property Name="CORREO_ELECTRONICO_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK__Administr__ID_AD__4F7CD00D">
     <End Type="BaseDeDatos.Usuario" Role="Usuario" Multiplicity="1" />

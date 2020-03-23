@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace ProyectoPasteleria.Modelos
+﻿namespace ProyectoPasteleria.Modelos
 {
-    public class Factura:Entidad
+    public class Factura : Entidad
     {
     }
 }

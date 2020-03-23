@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace ProyectoPasteleria.Modelos
+﻿namespace ProyectoPasteleria.Modelos
 {
     public class Entidad
     {
-        private int Id { get ; set; }
+        private int Id { get; set; }
 
     }
 }
