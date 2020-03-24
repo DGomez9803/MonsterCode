@@ -26,9 +26,9 @@ namespace ProyectoPasteleria.Repositorio
         {
             using (var db = new DataBase.DbContextLocal())
             {
-                Usuario usuario = new Usuario();
+       
 
-                db.Entry(usuario).State = System.Data.Entity.EntityState.Added;
+                db.Entry(entidad).State = System.Data.Entity.EntityState.Added;
 
                 db.SaveChanges();
             }
@@ -42,6 +42,41 @@ namespace ProyectoPasteleria.Repositorio
 
                 db.Entry(entidad).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
+            }
+        }
+        public Usuario ObtenerUsuarioPorId(int id)
+        {
+
+            using (var db = new DataBase.DbContextLocal())
+            {
+            
+                return db.Set<Usuario>().FirstOrDefault(x => x.ID_USUARIO == id);
+
+
+            }
+        }
+        //Recibe el correo y la contraseña y verifica si esta registrado en el sistema y retorna ese usuario
+        public Usuario VerificaUsuario(String Correo,String contraseña)
+        {
+
+            using (var db = new DataBase.DbContextLocal())
+            {
+
+                return db.Set<Usuario>().FirstOrDefault(x => x.CORREO_ELECTRONICO_USUARIO == Correo && x.CONTRASEÑA_USUARIO == contraseña);
+
+
+            }
+        }
+
+        public Administrador VerificaAministrador(int id)
+        {
+
+            using (var db = new DataBase.DbContextLocal())
+            {
+
+                return db.Set<Administrador>().FirstOrDefault(x => x.ID_ADMINISTRADOR == id );
+
+
             }
         }
     }

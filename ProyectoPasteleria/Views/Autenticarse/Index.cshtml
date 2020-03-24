@@ -1,0 +1,22 @@
+﻿@model ProyectoPasteleria.Models.Usuario
+
+@{
+    ViewBag.Title = "Index";
+}
+<h3>@ViewBag.Message</h3>
+
+@using (Html.BeginForm("Index", "Autenticarse", FormMethod.Post))
+{
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            @Html.TextBoxFor(m => m.CORREO_ELECTRONICO_USUARIO, new { @class = "form-control", @type = "email" })
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            @Html.TextBoxFor(m => m.CONTRASEÑA_USUARIO, new { @class = "form-control", @type = "password" })
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+    </form>
+}
