@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "MostrarPedido";
+    ViewData["Title"] = "Hola";
+}
+
+
+<head>
+    <style>
+        * {
+            background-color: #584B42;
+            color: #A4D1C8;
+        }
+    </style>
+</head>
+<body style="background-color:#584B42">
+
+    <div class="jumbotron" style="background-color:#584B42">
+        <h1>Hola</h1>
+        <h1>@ViewData["NameU"]</h1><h1>@ViewData["Total"]</h1>
+        <p class="lead">Este es tu carrito de compras</p>
+        <p><a a href="MostrarPedido.cshtml" class="btn btn-primary btn-lg" style="background-color:#F77754">Confirmar Carrito &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>@ViewData["NombrePastel0"]</h2>
+            <h3>@ViewData["PesoPastel0"]</h3>
+            <h3>@ViewData["PrecioPaste0"]</h3>
+            <h5>@ViewData["Descripcion0"]</h5>
+            <h3>@ViewData["Cantidad0"]</h3>
+            @*<p><a class="btn btn-default" href="" style="background-color:#F77754">Eliminar (-1) </a></p>*@
+        </div>
+        <div class="col-md-4">
+            <h2>@ViewData["NombrePastel1"]</h2>
+            <h3>@ViewData["PesoPastel1"]</h3>
+            <h3>@ViewData["PrecioPaste1"]</h3>
+            <h5>@ViewData["Descripcion1"]</h5>
+            <h3>@ViewData["Cantidad1"]</h3>
+            @*<p><a class="btn btn-default" href="" style="background-color:#F77754">Eliminar (-1) </a></p>*@
+        </div>
+        <div class="col-md-4">
+            <h2>@ViewData["NombrePastel2"]</h2>
+            <h3>@ViewData["PesoPastel2"]</h3>
+            <h3>@ViewData["PrecioPaste2"]</h3>
+            <h5>@ViewData["Descripcion2"]</h5>
+            <h3>@ViewData["Cantidad2"]</h3>
+            @*<p><a class="btn btn-default" href="" style="background-color:#F77754">Eliminar (-1) </a></p>*@
+        </div>
+    </div>
+
+</body>
