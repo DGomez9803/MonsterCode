@@ -9,17 +9,40 @@
 
 namespace ProyectoPasteleria.Models
 {
+    using Newtonsoft.Json.Linq;
+    using ProyectoPasteleria.Repositorio;
     using System;
     using System.Collections.Generic;
     
     public partial class Catalogo : Entidad
     {
+        IRepositorio<Catalogo> _repositorio;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Catalogo()
         {
             this.Pastel = new HashSet<Pastel>();
+            _repositorio = new Repositorio<Catalogo>();
         }
-    
+
+        public Catalogo(String nombre) {            
+            this.NOMBRE_CATALOGO = nombre;
+            this.Pastel = new HashSet<Pastel>();
+            _repositorio = new Repositorio<Catalogo>();
+        }
+
+        public HashSet<Pastel> getPasteles(int id) {
+            
+            return _repositorio.getPasteles(id);
+        }
+
+        public HashSet<Catalogo> getCatalogos() {
+            return _repositorio.catalogos();
+        }
+
+        
+
+
         public int ID_CATALOGO { get; set; }
         public string NOMBRE_CATALOGO { get; set; }
     

@@ -11,11 +11,10 @@ namespace ProyectoPasteleria.Controllers
 {
     public class HomeController : Controller
     {
+        private IRepositorio<Usuario> _repositorio;
 
         public HomeController()
         {
-          
-
         }
 
         public ActionResult Index()

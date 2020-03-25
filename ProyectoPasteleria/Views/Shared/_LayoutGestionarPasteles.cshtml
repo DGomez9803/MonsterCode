@@ -1,6 +1,4 @@
-﻿
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,7 +7,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title </title>
+    <title>GESTION DE PASTELES</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#537D91;">
@@ -18,12 +16,7 @@
             <li style="color:#A4D1C8;">@Html.ActionLink("Inicio", "Index", "Home", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
             <li style="color:#A4D1C8;">@Html.ActionLink("Acerca de", "About", "Home", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
             <li style="color:#A4D1C8;">@Html.ActionLink("Contacto", "Contact", "Home", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
-<<<<<<< HEAD
-            <li style="color:#A4D1C8;">@Html.ActionLink("Gestion", "Index", "GestionarPasteles" , null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
-=======
-            <li style="color:#A4D1C8;">@Html.ActionLink("Producto", "Index", "ccatalogos", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
-            <li style="color:#A4D1C8;">@Html.ActionLink("gestion", "Index", "gcatalogos", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
->>>>>>> 73f4c45feb9622d8422bd5011ea5fe439214a41c
+            <li style="color:#A4D1C8;">@Html.ActionLink("Gestion", "Index", "GestionarPasteles", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
             @if (Session["User"] == null && Session["Admin"] == null)
             {
                 <li style="color:#A4D1C8;">@Html.ActionLink("Auteticar", "Index", "Autenticarse", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
@@ -45,9 +38,7 @@
                 </li>
             }
 
-
         </ul>
-
 
     </nav>
 </head>
@@ -55,8 +46,6 @@
 
     <div class="container body-content">
         @RenderBody()
-
-
     </div>
 
     @Scripts.Render("~/bundles/jquery")

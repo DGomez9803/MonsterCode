@@ -26,7 +26,6 @@ namespace ProyectoPasteleria.Repositorio
         {
             using (var db = new DataBase.DbContextLocal())
             {
-       
 
                 db.Entry(entidad).State = System.Data.Entity.EntityState.Added;
 
@@ -44,39 +43,49 @@ namespace ProyectoPasteleria.Repositorio
                 db.SaveChanges();
             }
         }
-        public Usuario ObtenerUsuarioPorId(int id)
-        {
-
-            using (var db = new DataBase.DbContextLocal())
-            {
-            
-                return db.Set<Usuario>().FirstOrDefault(x => x.ID_USUARIO == id);
-
-
+        public Catalogo calogoPorId(int id) {
+            using (var db = new DataBase.DbContextLocal()) {
+                return db.Set<Catalogo>().FirstOrDefault(x => x.ID_CATALOGO == id);
             }
         }
-        //Recibe el correo y la contraseña y verifica si esta registrado en el sistema y retorna ese usuario
-        public Usuario VerificaUsuario(String Correo,String contraseña)
-        {
+        public HashSet<Catalogo> catalogos() {
 
             using (var db = new DataBase.DbContextLocal())
             {
-
-                return db.Set<Usuario>().FirstOrDefault(x => x.CORREO_ELECTRONICO_USUARIO == Correo && x.CONTRASEÑA_USUARIO == contraseña);
-
-
+                return db.Set<Catalogo>().ToHashSet<Catalogo>();
+            }
+        }
+        public HashSet<Pastel> getPasteles(int idc) {
+            using (var db = new DataBase.DbContextLocal())
+            {
+                return db.Set<Pastel>().Where(x => x.ID_CATALOGO == idc).ToHashSet<Pastel>();
             }
         }
 
-        public Administrador VerificaAministrador(int id)
-        {
-
+<<<<<<< HEAD
+        public HashSet<Pastel> Pasteles() {
+            using (var db = new DataBase.DbContextLocal()) {
+                return db.Set<Pastel>().ToHashSet<Pastel>();
+=======
+        public HashSet<Pedido> getPedidos(int id) {
             using (var db = new DataBase.DbContextLocal())
             {
-
-                return db.Set<Administrador>().FirstOrDefault(x => x.ID_ADMINISTRADOR == id );
-
-
+                return db.Set<Pedido>().Where(p => p.ID_CLIENTE == id).ToHashSet<Pedido>();
+            }
+        }
+        public HashSet<Factura> getFactura(int id)
+        {
+            using (var db = new DataBase.DbContextLocal())
+            {
+                return db.Set<Factura>().Where(f => f.ID_PEDIDO == id).ToHashSet<Factura>();
+            }
+        }
+        public HashSet<Pastel> getPastelPedido(int idc)
+        {
+            using (var db = new DataBase.DbContextLocal())
+            {
+                return db.Set<Pastel>().Where(q => q.ID_PASTEL == idc).ToHashSet<Pastel>();
+>>>>>>> 73f4c45feb9622d8422bd5011ea5fe439214a41c
             }
         }
         public HashSet<Catalogo> catalogos()

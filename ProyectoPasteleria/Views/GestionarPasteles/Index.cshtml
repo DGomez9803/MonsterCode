@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Gestinar Pasteles";
+    Layout = "~/Views/Shared/_LayoutGestionarPasteles.cshtml";
+}
+
+
+    <div class="contenedor">
+        <h2>@ViewBag.Title</h2>
+        <div class="contenedor-btn">
+            <ul>
+                <li clase="btn-lst"><h4>@Html.ActionLink("Registar", "Registrar", "GestionarPasteles", null, new { @style = "color: #A4D1C8; font-family: Trebuchet MS" })</h4></li>
+                <li clase="btn-lst"><h4>@Html.ActionLink("Actualizar", "Actualizar", "GestionarPasteles", null, new { @style = "color: #A4D1C8; font-family: Trebuchet MS" })</h4></li>
+                <li clase="btn-lst"><h4>@Html.ActionLink("Eliminar", "Eliminar", "GestionarPasteles", null, new { @style = "color: #A4D1C8;  font-family: Trebuchet MS" })</h4></li>
+            </ul>
+        </div>
+
+    </div>
+
+<style>
+
+
+    .contenedor {
+        width: 50%;
+        margin:auto;
+        
+    }
+
+    .contenedor li {
+        background: #F77754;
+        margin: 5px;
+        display: flex;
+	    align-items: center;
+	    justify-content: center;
+    }
+
+    .contenedor h2 {
+        color: #F77754;
+        text-align: center;
+    }
+
+
+</style>
