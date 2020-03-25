@@ -23,7 +23,49 @@ namespace ProyectoPasteleria.Models
         public virtual Administrador Administrador { get; set; }
         public virtual Cliente Cliente { get; set; }
 
-        
-    }
+        public Boolean VerificaDatosCliente()
+        {
+            if (NOMBRE_USUARIO == null) {
+                return false;
+            }
+            else {
+
+                if (APELLIDO_USUARIO == null)
+                {
+                    return false;
+
+
+                }
+                else
+                {
+
+                    if (CONTRASEÑA_USUARIO == null)
+                    {
+                        return false;
+
+                    }
+                    else
+                    {
+                        if (CORREO_ELECTRONICO_USUARIO == null)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return Cliente.VerificaDatos();
+
+
+                        }
+
+                    }
+                }
+                }
+
+            }
+        }
+    
+
+
+    
        
 }

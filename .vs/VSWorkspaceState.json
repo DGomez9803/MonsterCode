@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ProyectoPasteleria",
+    "\\ProyectoPasteleria\\App_Start",
+    "\\ProyectoPasteleria\\Context",
+    "\\ProyectoPasteleria\\Controllers",
+    "\\ProyectoPasteleria\\Mapper",
+    "\\ProyectoPasteleria\\Views",
+    "\\ProyectoPasteleria\\Views\\Home",
+    "\\ProyectoPasteleria\\Views\\Registrase",
+    "\\ProyectoPasteleria\\Views\\Shared"
   ],
+  "SelectedNode": "\\ProyectoPasteleria\\Controllers\\RegistraseController.cs",
   "PreviewInSolutionExplorer": false
 }

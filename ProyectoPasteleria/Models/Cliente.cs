@@ -11,7 +11,7 @@ namespace ProyectoPasteleria.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Cliente : Entidad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,13 +21,13 @@ namespace ProyectoPasteleria.Models
             this.MediosEnvio = new HashSet<MediosEnvio>();
             this.MediosPago = new HashSet<MediosPago>();
         }
-    
+
         public int ID_CLIENTE { get; set; }
         public string DIRECCION_CLIENTE { get; set; }
         public string CIUDAD_CLIENTE { get; set; }
         public string DEPARTAMENTO_CLIENTE { get; set; }
         public int TELEFONO_CLIENTE { get; set; }
-    
+
         public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
@@ -35,5 +35,44 @@ namespace ProyectoPasteleria.Models
         public virtual ICollection<MediosEnvio> MediosEnvio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MediosPago> MediosPago { get; set; }
+
+        public Boolean VerificaDatos()
+        {
+            if (DIRECCION_CLIENTE == null)
+            {
+                return false;
+            }
+            else
+            {
+
+                if (CIUDAD_CLIENTE == null)
+                {
+                    return false;
+
+
+                }
+                else
+                {
+
+                    if (DEPARTAMENTO_CLIENTE == null)
+                    {
+                        return false;
+
+                    }
+                    else
+                    {
+                      
+
+                            return true;
+
+
+                        
+                    
+
+                    }
+                }
+            }
+
+        }
     }
 }
