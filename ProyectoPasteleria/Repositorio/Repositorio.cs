@@ -26,7 +26,6 @@ namespace ProyectoPasteleria.Repositorio
         {
             using (var db = new DataBase.DbContextLocal())
             {
-       
 
                 db.Entry(entidad).State = System.Data.Entity.EntityState.Added;
 
@@ -44,39 +43,22 @@ namespace ProyectoPasteleria.Repositorio
                 db.SaveChanges();
             }
         }
-        public Usuario ObtenerUsuarioPorId(int id)
-        {
-
-            using (var db = new DataBase.DbContextLocal())
-            {
-            
-                return db.Set<Usuario>().FirstOrDefault(x => x.ID_USUARIO == id);
-
-
+        public Catalogo calogoPorId(int id) {
+            using (var db = new DataBase.DbContextLocal()) {
+                return db.Set<Catalogo>().FirstOrDefault(x => x.ID_CATALOGO == id);
             }
         }
-        //Recibe el correo y la contraseña y verifica si esta registrado en el sistema y retorna ese usuario
-        public Usuario VerificaUsuario(String Correo,String contraseña)
-        {
+        public HashSet<Catalogo> catalogos() {
 
             using (var db = new DataBase.DbContextLocal())
             {
-
-                return db.Set<Usuario>().FirstOrDefault(x => x.CORREO_ELECTRONICO_USUARIO == Correo && x.CONTRASEÑA_USUARIO == contraseña);
-
-
+                return db.Set<Catalogo>().ToHashSet<Catalogo>();
             }
         }
-
-        public Administrador VerificaAministrador(int id)
-        {
-
+        public HashSet<Pastel> getPasteles(int idc) {
             using (var db = new DataBase.DbContextLocal())
             {
-
-                return db.Set<Administrador>().FirstOrDefault(x => x.ID_ADMINISTRADOR == id );
-
-
+                return db.Set<Pastel>().Where(x => x.ID_CATALOGO == idc).ToHashSet<Pastel>();
             }
         }
 

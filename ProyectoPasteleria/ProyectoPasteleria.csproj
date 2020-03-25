@@ -103,9 +103,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -114,12 +111,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -190,12 +181,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\DbContextLocal.cs" />
-    <Compile Include="Controllers\AutenticarseController.cs" />
+    <Compile Include="Controllers\ccatalogosController.cs" />
+    <Compile Include="Controllers\CtrlAutenticarseEnElSistema.cs" />
     <Compile Include="Controllers\ForumController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\GestionarPastelesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RealizarPedidoController.cs" />
     <Compile Include="Controllers\RegistraseController.cs" />
+=======
+    <Compile Include="Controllers\gcatalogosController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+>>>>>>> 73d86889feb7e67b6423245867b9a7b685fcffbe
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,7 +207,6 @@
     <Compile Include="Models\MediosPago.cs" />
     <Compile Include="Models\Pastel.cs" />
     <Compile Include="Models\Pedido.cs" />
-    <Compile Include="Models\users.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\IRepositorio.cs" />
@@ -259,6 +255,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Autenticarse\Index.cshtml" />
     <Content Include="Views\Registrase\Index.cshtml" />
     <Content Include="Views\GestionarPasteles\Index.cshtml" />
@@ -266,6 +263,12 @@
     <Content Include="Views\GestionarPasteles\Registrar.cshtml" />
     <Content Include="Views\GestionarPasteles\Actualizar.cshtml" />
     <Content Include="Views\GestionarPasteles\Eliminar.cshtml" />
+=======
+    <Content Include="Views\Forum\New.cshtml" />
+    <Content Include="Views\Forum\AddReturn.cshtml" />
+    <Content Include="Views\CtrlAutenticarseEnElSistema\Index.cshtml" />
+    <Content Include="Views\ccatalogos\catalogoconsulta.cshtml" />
+>>>>>>> 73d86889feb7e67b6423245867b9a7b685fcffbe
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -281,7 +284,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="Views\RealizarPedido\" />
+=======
+    <Folder Include="Views\gcatalogos\" />
+>>>>>>> 73d86889feb7e67b6423245867b9a7b685fcffbe
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

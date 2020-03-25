@@ -1,0 +1,54 @@
+﻿@model ProyectoPasteleria.Models.Pastel
+@{
+    ViewBag.Title = "Registrar";
+}
+
+<div class="contenedor">
+    <h2>@ViewBag.Title</h2>
+    <div class="contenedor-form">
+        <form action="/GestionarPasteles/Registrar" id="form-pop" method="post">
+            <div class="contenedor-inputs">
+                <label for="inputEmail4">Nombre Pastel</label>
+                @Html.TextBoxFor(m => m.NOMBRE_PASTEL, new { @class = "form-control", @type = "text" })
+                <label for="inputEmail4">Peso pastel</label>
+                @Html.TextBoxFor(m => m.PESO_PASTEL, new { @class = "form-control", @type = "text" })
+                <label for="inputEmail4">precio</label>
+                @Html.TextBoxFor(m => m.PRECIO_PASTEL, new { @class = "form-control", @type = "text" })
+                <label for="inputEmail4">Descripcion</label>
+                @Html.TextBoxFor(m => m.DESCRIPCION_PASTEL, new { @class = "form-control", @type = "text" })
+                <input type="submit" id="btn-form" class="btn-submit" value="Enviar">
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<style>
+
+
+    .contenedor {
+        width: 50%;
+        margin: auto;
+    }
+
+    .contenedor-form {
+        background: #537D91;
+        height: 500px;
+        padding: 20px;
+    }
+
+
+    .contenedor h2 {
+        color: #F77754;
+        text-align: center;
+    }
+
+    .contenedor-inputs input {
+        width: 100%;
+        margin-bottom: 20px;
+        height: 52px;
+        font-size: 18px;
+        text-align: center;
+        color: #000000;
+    }
