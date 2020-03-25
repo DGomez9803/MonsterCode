@@ -79,5 +79,13 @@ namespace ProyectoPasteleria.Repositorio
 
             }
         }
+        public HashSet<Catalogo> catalogos()
+        {
+
+            using (var db = new DataBase.DbContextLocal())
+            {
+                return db.Set<Catalogo>().ToHashSet<Catalogo>();
+            }
+        }
     }
 }
