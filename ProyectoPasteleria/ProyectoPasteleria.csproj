@@ -182,7 +182,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\DbContextLocal.cs" />
     <Compile Include="Controllers\ccatalogosController.cs" />
-    <Compile Include="Controllers\CtrlAutenticarseEnElSistema.cs" />
     <Compile Include="Controllers\ForumController.cs" />
 <<<<<<< HEAD
     <Compile Include="Controllers\GestionarPastelesController.cs" />
@@ -267,8 +266,14 @@
     <Content Include="Views\Forum\New.cshtml" />
     <Content Include="Views\Forum\AddReturn.cshtml" />
     <Content Include="Views\CtrlAutenticarseEnElSistema\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\ccatalogos\catalogoconsulta.cshtml" />
 >>>>>>> 73d86889feb7e67b6423245867b9a7b685fcffbe
+=======
+    <Content Include="Views\ccatalogos\Index.cshtml" />
+    <Content Include="Views\gcatalogos\Index.cshtml" />
+    <Content Include="Views\gcatalogos\Nuevo.cshtml" />
+>>>>>>> 73f4c45feb9622d8422bd5011ea5fe439214a41c
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -283,6 +288,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
 <<<<<<< HEAD
     <Folder Include="Views\RealizarPedido\" />
@@ -290,6 +296,9 @@
     <Folder Include="Views\gcatalogos\" />
 >>>>>>> 73d86889feb7e67b6423245867b9a7b685fcffbe
   </ItemGroup>
+=======
+  <ItemGroup />
+>>>>>>> 73f4c45feb9622d8422bd5011ea5fe439214a41c
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

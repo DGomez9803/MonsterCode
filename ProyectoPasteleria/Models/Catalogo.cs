@@ -42,6 +42,7 @@ namespace ProyectoPasteleria.Models
 
         
 
+
         public int ID_CATALOGO { get; set; }
         public string NOMBRE_CATALOGO { get; set; }
     

@@ -15,10 +15,10 @@ namespace ProyectoPasteleria.Controllers
         public ActionResult Index()
         {
             _repositorio = new Repositorio<Catalogo>();
-            HashSet<Catalogo> catalogos = _repositorio.catalogos();
-            List<Catalogo> lst = catalogos.ToList();
+            /*HashSet<Catalogo> catalogos = _repositorio.catalogos();
+            List<Catalogo> lst = catalogos.ToList();*/
 
-            return View(lst);
+            return View(_repositorio.catalogos().ToList());
         }
     }
 }
