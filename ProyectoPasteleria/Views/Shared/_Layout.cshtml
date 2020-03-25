@@ -1,12 +1,44 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+	
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#537D91;">
+
+		<ul class="nav navbar-nav">
+			<li style="color:#A4D1C8;">@Html.ActionLink("Inicio", "Index", "Home", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
+			<li style="color:#A4D1C8;">@Html.ActionLink("Acerca de", "About", "Home", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
+			<li style="color:#A4D1C8;">@Html.ActionLink("Contacto", "Contact", "Home", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
+			<li style="color:#A4D1C8;">@Html.ActionLink("Producto", "Index", "ccatalogos", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
+			<li style="color:#A4D1C8;">@Html.ActionLink("gestion", "Index", "gcatalogos", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
+			<li style="color:#A4D1C8;">@Html.ActionLink("Compras", "Index", "Compra", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
+			@if (Session["User"] == null && Session["Admin"] == null)
+			{
+				<li style="color:#A4D1C8;">@Html.ActionLink("Auteticar", "Index", "Autenticarse", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
+
+				<li style="color:#A4D1C8;">@Html.ActionLink("Registrase", "Index", "Registrase", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
+			}
+			@if (Session["User"] != null || Session["Admin"] != null)
+			{
+
+				<li class="nav-item dropdown" style="color:#A4D1C8;">
+					<a class="nav-link dropdown-toggle" style="color:#A4D1C8;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" font-family="Segoe Script">
+
+						Cuenta
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+						<a class="dropdown-item">@Html.ActionLink("Cerra Seccion", "CerrarSeccion", "Autenticarse", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</a>
+					</div>
+				</li>
+			}
+
+
+		</ul>
+
+
+	</nav>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">

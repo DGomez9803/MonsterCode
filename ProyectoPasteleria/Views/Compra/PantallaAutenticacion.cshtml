@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "PantallaAutenticacion";
+}
+
+<h2>PantallaAutenticacion</h2>
+<div class="row" style="text-align:right;padding:5px;">
+    
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<table class="table">
+			<tr>
+				
+				<th>Id Cliente</th>
+				<th>Direccion</th>
+				<th>Ciudad</th>
+				<th>Id Factura</th>
+				<th>Nombre Pastel</th>
+				<th>Precio Pastel</th>
+				<th>Cantidad</th>
+				<th>Total</th>
+
+			</tr>
+			@foreach (var oElemento in Model)
+			{
+		<tr>
+			<td>@oElemento.ID_CLIENTE</td>
+			<td>@oElemento.DIRECCION_CLIENTE</td>
+			<td>@oElemento.CIUDAD_CLIENTE</td>
+			<td>@oElemento.ID_FACTURA</td>
+			<td>@oElemento.NOMBRE_PASTEL</td>
+			<td>@oElemento.PRECIO_PASTEL</td>
+			<td>@oElemento.CANTIDAD</td>
+			<td>@oElemento.TOTAL</td>
+
+
+		</tr>
+			}
+		</table>
+
+    </div>
+</div>
+

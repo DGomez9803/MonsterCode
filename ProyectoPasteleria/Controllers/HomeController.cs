@@ -16,8 +16,7 @@ namespace ProyectoPasteleria.Controllers
         public HomeController()
         {
             _repositorio = new Repositorio<Usuario>();
-            Usuario usuario = new Usuario();
-            _repositorio.Agregar(usuario);
+            
         }
 
         public ActionResult Index()

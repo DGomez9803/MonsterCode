@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPasteleria.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,9 @@ namespace ProyectoPasteleria.Repositorio
         void Agregar(T entidad);
         void Eliminar(T entidad);
         void Actualizar(T entidad);
+        HashSet<Pedido> getPedidos(int id);
+        HashSet<Factura> getFactura(int id);
+        HashSet<Pastel> getPastelPedido(int idc);
+        Usuario getInfoUsuario(int id);
     }
 }

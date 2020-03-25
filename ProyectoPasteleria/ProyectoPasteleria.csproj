@@ -181,6 +181,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\DbContextLocal.cs" />
+    <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\CtrlAutenticarseEnElSistema.cs" />
     <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -249,6 +250,8 @@
     <Content Include="Views\Forum\New.cshtml" />
     <Content Include="Views\Forum\AddReturn.cshtml" />
     <Content Include="Views\CtrlAutenticarseEnElSistema\Index.cshtml" />
+    <Content Include="Views\Compra\PantallaAutenticacion.cshtml" />
+    <Content Include="Views\Compra\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -263,6 +266,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

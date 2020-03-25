@@ -6,20 +6,26 @@
 //     Los cambios manuales en este archivo se sobrescribirán si se regenera el código.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+ using ProyectoPasteleria.Repositorio;
 namespace ProyectoPasteleria.Models
 {
     using System;
     using System.Collections.Generic;
-    
+   
+
     public partial class Pedido : Entidad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        IRepositorio<Pedido> _repositorio;
         public Pedido()
         {
-            this.Factura = new HashSet<Factura>();
+            _repositorio = new Repositorio<Pedido>();
         }
-    
+        public HashSet<Pedido> getPedidos(int id) {
+            return _repositorio.getPedidos(id);
+        }
+
+
         public int ID_PEDIDO { get; set; }
         public int ID_CLIENTE { get; set; }
         public int ID_PASTEL { get; set; }

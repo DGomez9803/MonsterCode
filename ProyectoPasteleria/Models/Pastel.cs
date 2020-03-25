@@ -6,7 +6,7 @@
 //     Los cambios manuales en este archivo se sobrescribirán si se regenera el código.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using ProyectoPasteleria.Repositorio;
 namespace ProyectoPasteleria.Models
 {
     using System;
@@ -15,11 +15,16 @@ namespace ProyectoPasteleria.Models
     public partial class Pastel : Entidad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+
+        IRepositorio<Pastel> _repositorio;
         public Pastel()
         {
-            this.Pedido = new HashSet<Pedido>();
+            _repositorio = new Repositorio<Pastel>();
         }
-    
+
+        public HashSet<Pastel> getPastelPedido(int idc) {
+            return _repositorio.getPastelPedido(idc);
+        }
         public int ID_PASTEL { get; set; }
         public string NOMBRE_PASTEL { get; set; }
         public decimal PESO_PASTEL { get; set; }

@@ -1,0 +1,18 @@
+﻿@model List<ProyectoPasteleria.Models.Pedido>
+@{
+	ViewBag.Title = "Compras realizadas";
+}
+
+@foreach (ProyectoPasteleria.Models.Pedido pedido in Model) { 
+	<li>
+		<h3>@pedido.CANTIDAD</h3>
+		<h3>@pedido.Cliente.Usuario.NOMBRE_USUARIO</h3>
+		<h3>@pedido.Cliente.DIRECCION_CLIENTE</h3>
+		<h3>@pedido.Cliente.CIUDAD_CLIENTE</h3>
+		<h3>@pedido.ID_PEDIDO</h3>
+		<h3>@pedido.Pastel.NOMBRE_PASTEL</h3>
+		<h3>@pedido.CANTIDAD</h3>
+		<h3>@pedido.TOTAL</h3>
+	</li>
+}
+

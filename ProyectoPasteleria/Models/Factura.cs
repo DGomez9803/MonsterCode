@@ -6,7 +6,7 @@
 //     Los cambios manuales en este archivo se sobrescribirán si se regenera el código.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using ProyectoPasteleria.Repositorio;
 namespace ProyectoPasteleria.Models
 {
     using System;
@@ -14,6 +14,14 @@ namespace ProyectoPasteleria.Models
     
     public partial class Factura : Entidad
     {
+        IRepositorio<Factura> _repositorio;
+        public Factura()
+        {
+            _repositorio = new Repositorio<Factura>();
+        }
+        public HashSet<Factura> getFactura(int id) {
+            return _repositorio.getFactura(id);
+        }
         public int ID_FACTURA { get; set; }
         public int ID_PEDIDO { get; set; }
         public string URL_FACTURA { get; set; }
