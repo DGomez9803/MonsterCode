@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPasteleria.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,8 @@ namespace ProyectoPasteleria.Repositorio
         void Agregar(T entidad);
         void Eliminar(T entidad);
         void Actualizar(T entidad);
+        Catalogo calogoPorId(int id);
+        HashSet<Pastel> getPasteles(int idc);
+        HashSet<Catalogo> catalogos();
     }
 }

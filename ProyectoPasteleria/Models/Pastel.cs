@@ -23,7 +23,6 @@ namespace ProyectoPasteleria.Models
         public int ID_PASTEL { get; set; }
         public string NOMBRE_PASTEL { get; set; }
         public decimal PESO_PASTEL { get; set; }
-        public int IDCATEGORIA_PASTEL { get; set; }
         public decimal PRECIO_PASTEL { get; set; }
         public string DESCRIPCION_PASTEL { get; set; }
         public byte[] IMAGEN_PASTEL { get; set; }

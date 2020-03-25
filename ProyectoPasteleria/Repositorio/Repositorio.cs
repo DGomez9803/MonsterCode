@@ -26,9 +26,8 @@ namespace ProyectoPasteleria.Repositorio
         {
             using (var db = new DataBase.DbContextLocal())
             {
-                Usuario usuario = new Usuario();
 
-                db.Entry(usuario).State = System.Data.Entity.EntityState.Added;
+                db.Entry(entidad).State = System.Data.Entity.EntityState.Added;
 
                 db.SaveChanges();
             }
@@ -42,6 +41,24 @@ namespace ProyectoPasteleria.Repositorio
 
                 db.Entry(entidad).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
+            }
+        }
+        public Catalogo calogoPorId(int id) {
+            using (var db = new DataBase.DbContextLocal()) {
+                return db.Set<Catalogo>().FirstOrDefault(x => x.ID_CATALOGO == id);
+            }
+        }
+        public HashSet<Catalogo> catalogos() {
+
+            using (var db = new DataBase.DbContextLocal())
+            {
+                return db.Set<Catalogo>().ToHashSet<Catalogo>();
+            }
+        }
+        public HashSet<Pastel> getPasteles(int idc) {
+            using (var db = new DataBase.DbContextLocal())
+            {
+                return db.Set<Pastel>().Where(x => x.ID_CATALOGO == idc).ToHashSet<Pastel>();
             }
         }
     }
