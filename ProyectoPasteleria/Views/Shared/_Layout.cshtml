@@ -18,6 +18,7 @@
             <li style="color:#A4D1C8;">@Html.ActionLink("Inicio", "Index", "Home", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
             <li style="color:#A4D1C8;">@Html.ActionLink("Acerca de", "About", "Home", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
             <li style="color:#A4D1C8;">@Html.ActionLink("Contacto", "Contact", "Home", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
+            <li style="color:#A4D1C8;">@Html.ActionLink("Gestion", "Index", "GestionarPasteles" , null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
             @if (Session["User"] == null && Session["Admin"] == null)
             {
                 <li style="color:#A4D1C8;">@Html.ActionLink("Auteticar", "Index", "Autenticarse", null, new { @style = "color:#A4D1C8; font-family: Segoe Script" })</li>
@@ -26,11 +27,11 @@
             }
             @if (Session["User"] != null || Session["Admin"] != null)
             {
-               
+
                 <li class="nav-item dropdown" style="color:#A4D1C8;">
-                    <a class="nav-link dropdown-toggle" style="color:#A4D1C8;"id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" font-family= "Segoe Script" >
-            
-                        Cuenta 
+                    <a class="nav-link dropdown-toggle" style="color:#A4D1C8;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" font-family="Segoe Script">
+
+                        Cuenta
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 

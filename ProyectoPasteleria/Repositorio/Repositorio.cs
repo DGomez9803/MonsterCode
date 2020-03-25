@@ -79,5 +79,11 @@ namespace ProyectoPasteleria.Repositorio
 
             }
         }
+
+        public HashSet<Pastel> Pasteles() {
+            using (var db = new DataBase.DbContextLocal()) {
+                return db.Set<Pastel>().ToHashSet<Pastel>();
+            }
+        }
     }
 }
