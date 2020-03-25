@@ -1,0 +1,19 @@
+﻿@model ProyectoPasteleria.Models.Catalogo
+@{
+    ViewBag.Title = "Nuevo Catalogo";
+}
+
+<h2>ViewBag.Title</h2>
+
+@using (Html.BeginForm( "gcatalogos","Nuevo", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(c => c.NOMBRE_CATALOGO)
+            @Html.TextBoxFor(c => c.NOMBRE_CATALOGO, "", new { @class = "form-control" })
+            <div>
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
+        </div>
+    </div>
+}

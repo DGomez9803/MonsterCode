@@ -61,5 +61,26 @@ namespace ProyectoPasteleria.Repositorio
                 return db.Set<Pastel>().Where(x => x.ID_CATALOGO == idc).ToHashSet<Pastel>();
             }
         }
+
+        public HashSet<Pedido> getPedidos(int id) {
+            using (var db = new DataBase.DbContextLocal())
+            {
+                return db.Set<Pedido>().Where(p => p.ID_CLIENTE == id).ToHashSet<Pedido>();
+            }
+        }
+        public HashSet<Factura> getFactura(int id)
+        {
+            using (var db = new DataBase.DbContextLocal())
+            {
+                return db.Set<Factura>().Where(f => f.ID_PEDIDO == id).ToHashSet<Factura>();
+            }
+        }
+        public HashSet<Pastel> getPastelPedido(int idc)
+        {
+            using (var db = new DataBase.DbContextLocal())
+            {
+                return db.Set<Pastel>().Where(q => q.ID_PASTEL == idc).ToHashSet<Pastel>();
+            }
+        }
     }
 }
